@@ -10,14 +10,17 @@ public class Question2 {
         String name;
         Double salary;
         int c=0;
-        do {
+        while (true){
             name=in.next();
+            if(name.equals("0"))break;
             salary=in.nextDouble();
             list.add(new Pair<String, Double>(name,salary));
             c++;
-        }while (!name.equals("0"));
-        Pair<String, Double> ans=list.get(0);
-        System.out.println(ans.getKey()+" "+ans.getValue());
+        }
+        for (int i=0; i<list.size();i++){
+            Pair<String, Double> ans=list.get(i);
+            System.out.println(ans.getKey()+" "+ans.getValue());
+        }
 
     }
 }
